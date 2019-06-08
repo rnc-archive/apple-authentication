@@ -2,7 +2,9 @@
 
 ---
 
-**CURRENTLY UNREALEASED. Take a look at [the issues](https://github.com/react-native-community/apple-sign-in/issues) to see our progress.**
+**🚧 UNDER CONSTRUCTION 🚧**
+
+*This library is not currently released. The README below shows what the library will eventually do. Take a look in the [issues](https://github.com/react-native-community/apple-sign-in/issues) page for discussions on our progress.*
 
 ---
 
