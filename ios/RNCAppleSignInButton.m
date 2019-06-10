@@ -1,9 +1,3 @@
-//
-//  RNCAppleSignInButton.m
-//  RNCAppleSignIn
-//
-//  Created by Vojtech Novak on 07/06/2019.
-
 
 #import "RNCAppleSignInButton.h"
 
