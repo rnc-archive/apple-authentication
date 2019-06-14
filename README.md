@@ -67,7 +67,7 @@ Performing the sign in:
 ```javascript
 import { SignInWithApple } from "@react-native-community/apple-sign-in";
 
-SignInWithApple.perform({
+SignInWithApple.requestAsync({
     requestedScopes: [
         SignInWithApple.Scopes.FullName,
         SignInWithApple.Scopes.Email,
@@ -84,7 +84,7 @@ Checking if an existing user ID is valid:
 ```javascript
 import { SignInWithApple } from "@react-native-community/apple-sign-in";
 
-SignInWithApple.getCredentialState(userId).then(state => {
+SignInWithApple.getCredentialStateAsync(userId).then(state => {
     switch (state) {
         case SignInWithAppleCredential.State.Authorized:
             // Handle the authorised state
@@ -121,9 +121,9 @@ unsubscribe();
       * [`SignInWithAppleButton.Type`](#signinwithapplebuttontype)
       * [`SignInWithAppleButton.Style`](#signinwithapplebuttonstyle)
 * **Methods:**
-  * [`SignInWithApple.isAvailable()`](#signinwithappleisavailable)
-  * [`SignInWithApple.perform()`](#signinwithappleperform)
-  * [`SignInWithApple.getCredentialState()`](#signinwithapplegetcredentialstate)
+  * [`SignInWithApple.isAvailableAsync()`](#signinwithappleisavailableasync)
+  * [`SignInWithApple.requestAsync()`](#signinwithapplerequestasync)
+  * [`SignInWithApple.getCredentialStateAsync()`](#signinwithapplegetcredentialstateasync)
   * [`SignInWithApple.addRevokeListener()`](#signinwithappleaddrevokelistener)
   * **Enums:**
     * [`SignInWithApple.Scopes`](#signinwithapplescopes)
@@ -186,18 +186,18 @@ Controls the style of the [`SignInWithAppleButton`](#signinwithapplebutton). Pos
 * `SignInWithAppleButton.Style.White`
 * `SignInWithAppleButton.Style.WhiteOutline`
 
-### `SignInWithApple.isAvailable()`
+### `SignInWithApple.isAvailableAsync()`
 
 A method which returns a `Promise` which resolves to a `boolean` if you are able to perform a Sign In with Apple. Generally users need to be on iOS 13+.
 
-### `SignInWithApple.perform()`
+### `SignInWithApple.requestAsync()`
 
 Perform a Sign In with Apple request with the given [`SignInWithAppleOptions`](#signinwithappleoptions). The method will return a `Promise` which will resolve to a [`SignInWithAppleCredential`](#signinwithapplecredential) on success. You should make sure you include error handling.
 
 ```javascript
 import { SignInWithApple } from "@react-native-community/apple-sign-in";
 
-SignInWithApple.perform({
+SignInWithApple.requestAsync({
     requestedScopes: [
         SignInWithApple.Scopes.FullName,
         SignInWithApple.Scopes.Email,
@@ -209,14 +209,14 @@ SignInWithApple.perform({
 })
 ```
 
-### `SignInWithApple.getCredentialState()`
+### `SignInWithApple.getCredentialStateAsync()`
 
 You can query the current state of a user ID. It will tell you if the token is still valid or if it has been revoked by the user.
 
 ```javascript
 import { SignInWithApple } from "@react-native-community/apple-sign-in";
 
-SignInWithApple.getCredentialState(userId).then(state => {
+SignInWithApple.getCredentialStateAsync(userId).then(state => {
     switch (state) {
         case SignInWithAppleCredential.State.Authorized:
             // Handle the authorised state
@@ -253,7 +253,7 @@ unsubscribe();
 
 #### `SignInWithApple.Scopes`
 
-Controls which scopes you are requesting when the call [`SignInWithApple.perform()`](#signinwithappleperform). Possible values are:
+Controls which scopes you are requesting when the call [`SignInWithApple.requestAsync()`](#signinwithapplerequestasync). Possible values are:
 
 * `SignInWithApple.Scopes.FullName`
   * A scope that includes the user’s full name.
@@ -266,7 +266,7 @@ Not that it is possible that you will not be granted all of the scopes which you
 
 #### `SignInWithApple.Operations`
 
-Controls what operation you are requesting when the call [`SignInWithApple.perform()`](#signinwithappleperform). Possible values are:
+Controls what operation you are requesting when the call [`SignInWithApple.requestAsync()`](#signinwithapplerequestasync). Possible values are:
 
 * `SignInWithApple.Operations.Login`
   * An operation used to authenticate a user.
@@ -281,7 +281,7 @@ See the [Apple Documentation](https://developer.apple.com/documentation/authenti
 
 #### `SignInWithApple.CredentialState`
 
-Defines the state that the credential is in when responding to your call to [`SignInWithApple.getCredentialState()`](#signinwithapplegetcredentialstate). Possible values are:
+Defines the state that the credential is in when responding to your call to [`SignInWithApple.getCredentialStateAsync()`](#signinwithapplegetcredentialstateasync). Possible values are:
 
 * `SignInWithApple.CredentialState.Authorized`
   * The user is authorized.
@@ -322,7 +322,7 @@ See the [Apple Documentation](https://developer.apple.com/documentation/authenti
 
 #### `SignInWithAppleCredential`
 
-The user credentials returned to a successful call to [`SignInWithApple.perform()`](#signinwithappleperform). It is an object with these properties:
+The user credentials returned to a successful call to [`SignInWithApple.requestAsync()`](#signinwithapplerequestasync). It is an object with these properties:
 
 | Property            | Type                                                                         | Description                                                                                                                                                                                                                                                                                            |
 | ------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
