@@ -51,7 +51,7 @@ TODO: Describe enabling the entitlement in Xcode
 Show the Sign In with Apple button:
 
 ```jsx
-import { SignInWithAppleButton, SignInWithAppleScopes } from "@react-native-community/apple-sign-in";
+import { SignInWithAppleButton } from "@react-native-community/apple-sign-in";
 
 function YourComponent() {
     return (
