@@ -69,8 +69,8 @@ import { SignInWithApple } from "@react-native-community/apple-sign-in";
 
 SignInWithApple.requestAsync({
     requestedScopes: [
-        SignInWithApple.Scopes.FullName,
-        SignInWithApple.Scopes.Email,
+        SignInWithApple.Scope.FULL_NAME,
+        SignInWithApple.Scope.EMAIL,
     ]
 }).then(credentials => {
     // Handle successful authenticated
@@ -86,13 +86,13 @@ import { SignInWithApple } from "@react-native-community/apple-sign-in";
 
 SignInWithApple.getCredentialStateAsync(userId).then(state => {
     switch (state) {
-        case SignInWithAppleCredential.State.Authorized:
+        case SignInWithApple.CredentialState.AUTHORIZED:
             // Handle the authorised state
             break;
-        case SignInWithAppleCredential.State.Revoked:
+        case SignInWithApple.CredentialState.REVOKED:
             // The user has signed out
             break;
-        case SignInWithAppleCredential.State.NotFound:
+        case SignInWithApple.CredentialState.NOT_FOUND:
             // The user id was not found
             break;
     }
@@ -126,7 +126,7 @@ unsubscribe();
   * [`SignInWithApple.getCredentialStateAsync()`](#signinwithapplegetcredentialstateasync)
   * [`SignInWithApple.addRevokeListener()`](#signinwithappleaddrevokelistener)
   * **Enums:**
-    * [`SignInWithApple.Scopes`](#signinwithapplescopes)
+    * [`SignInWithApple.Scope`](#signinwithapplescope)
     * [`SignInWithApple.Operation`](#signinwithappleoperation)
     * [`SignInWithApple.CredentialState`](#signinwithapplecredentialstate)
     * [`SignInWithApple.UserDetectionStatus`](#signinwithappleuserdetectionstatus)
@@ -138,15 +138,15 @@ unsubscribe();
 
 This component displays the "Sign In with Apple" button on your screen. The App Store Guidelines require you to use this component to start the sign in process instead of a custom button. You can customise the design of the button using the properties. You should start the sign in process when the `onPress` property is called.
 
-You should only attempt to render this if `SignInWithApple.isAvailable()` resolves to `true`. This component will render nothing if it is not available and you will get a warning in `__DEV__ === true`.
+You should only attempt to render this if `SignInWithApple.isAvailableAsync()` resolves to `true`. This component will render nothing if it is not available and you will get a warning in `__DEV__ === true`.
 
 The properties of this component extends from `View`, however, you should not attempt to restyle the background color or border radius with the `style` property. This will not work and is against the App Store Guidelines. The additionally accepted properties are:
 
 | Property       | Type                                                         | Required? | Default                              | Description                                                    |
 | -------------- | ------------------------------------------------------------ | --------- | ------------------------------------ | -------------------------------------------------------------- |
 | `onPress`      | `() => void`                                                 | Yes       |                                      | The callback which is called when the user pressed the button. |
-| `type`         | [`SignInWithAppleButton.Type`](#signinwithapplebuttontype)   | No        | `SignInWithAppleButton.Type.Default` | Controls the text that is shown on the button.                 |
-| `style`        | [`SignInWithAppleButton.Style`](#signinwithapplebuttonstyle) | No        | `SignInWithAppleButton.Style.Black`  | Controls the style of the button.                              |
+| `type`         | [`SignInWithAppleButton.Type`](#signinwithapplebuttontype)   | No        | `SignInWithAppleButton.Type.DEFAULT` | Controls the text that is shown on the button.                 |
+| `style`        | [`SignInWithAppleButton.Style`](#signinwithapplebuttonstyle) | No        | `SignInWithAppleButton.Style.BLACK`  | Controls the style of the button.                              |
 | `cornerRadius` | `number`                                                     | No        | ?                                    | The radius of the corners of the button.                       |
 
 ```jsx
@@ -155,8 +155,8 @@ import { SignInWithAppleButton, SignInWithAppleScopes } from "@react-native-comm
 function YourComponent() {
     return (
         <SignInWithAppleButton
-            type={SignInWithAppleButton.Type.Default}
-            style={SignInWithAppleButton.Type.Black}
+            type={SignInWithAppleButton.Type.DEFAULT}
+            style={SignInWithAppleButton.Type.BLACK}
             cornerRadus={5}
             onPress={() => {
                 // Start the sign in process
@@ -174,17 +174,17 @@ See the [Apple Documentation](https://developer.apple.com/documentation/authenti
 
 Controls the text that is shown of the [`SignInWithAppleButton`](#signinwithapplebutton). Possible values are:
 
-* `SignInWithAppleButton.Type.Default`
-* `SignInWithAppleButton.Type.SignUp`
-* `SignInWithAppleButton.Type.Continue`
+* `SignInWithAppleButton.Type.DEFAULT`
+* `SignInWithAppleButton.Type.SIGN_UP`
+* `SignInWithAppleButton.Type.CONTINUE`
 
 ##### `SignInWithAppleButton.Style`
 
 Controls the style of the [`SignInWithAppleButton`](#signinwithapplebutton). Possible values are:
 
-* `SignInWithAppleButton.Style.Black`
-* `SignInWithAppleButton.Style.White`
-* `SignInWithAppleButton.Style.WhiteOutline`
+* `SignInWithAppleButton.Style.BLACK`
+* `SignInWithAppleButton.Style.WHITE`
+* `SignInWithAppleButton.Style.WHITE_OUTLINE`
 
 ### `SignInWithApple.isAvailableAsync()`
 
@@ -199,8 +199,8 @@ import { SignInWithApple } from "@react-native-community/apple-sign-in";
 
 SignInWithApple.requestAsync({
     requestedScopes: [
-        SignInWithApple.Scopes.FullName,
-        SignInWithApple.Scopes.Email,
+        SignInWithApple.Scope.FULL_NAME,
+        SignInWithApple.Scope.EMAIL,
     ]
 }).then(credentials => {
     // Handle successful authenticated
@@ -218,13 +218,13 @@ import { SignInWithApple } from "@react-native-community/apple-sign-in";
 
 SignInWithApple.getCredentialStateAsync(userId).then(state => {
     switch (state) {
-        case SignInWithAppleCredential.State.Authorized:
+        case SignInWithAppleCredential.CredentialState.AUTHORIZED:
             // Handle the authorised state
             break;
-        case SignInWithAppleCredential.State.Revoked:
+        case SignInWithAppleCredential.CredentialState.REVOKED:
             // The user has signed out
             break;
-        case SignInWithAppleCredential.State.NotFound:
+        case SignInWithAppleCredential.CredentialState.NOT_FOUND:
             // The user id was not found
             break;
     }
@@ -251,30 +251,30 @@ unsubscribe();
 
 ### Enums
 
-#### `SignInWithApple.Scopes`
+#### `SignInWithApple.Scope`
 
 Controls which scopes you are requesting when the call [`SignInWithApple.requestAsync()`](#signinwithapplerequestasync). Possible values are:
 
-* `SignInWithApple.Scopes.FullName`
+* `SignInWithApple.Scope.FULL_NAME`
   * A scope that includes the user’s full name.
-* `SignInWithApple.Scopes.Email`
+* `SignInWithApple.Scope.EMAIL`
   * A scope that includes the user’s email address.
 
 See the [Apple Documentation](https://developer.apple.com/documentation/authenticationservices/asauthorizationscope) for more details.
 
 Not that it is possible that you will not be granted all of the scopes which you request. You need to check which ones you are granted in the [`SignInWithAppleCredential`](#signinwithapplecredential) you get back.
 
-#### `SignInWithApple.Operations`
+#### `SignInWithApple.Operation`
 
 Controls what operation you are requesting when the call [`SignInWithApple.requestAsync()`](#signinwithapplerequestasync). Possible values are:
 
-* `SignInWithApple.Operations.Login`
+* `SignInWithApple.Operation.LOGIN`
   * An operation used to authenticate a user.
-* `SignInWithApple.Operations.Logout`
+* `SignInWithApple.Operation.LOGOUT`
   * An operation that ends an authenticated session.
-* `SignInWithApple.Operations.Refresh`
+* `SignInWithApple.Operation.REFRESH`
   * An operation that refreshes the logged-in user’s credentials.
-* `SignInWithApple.Operations.Implicit`
+* `SignInWithApple.Operation.IMPLICIT`
   * An operation that depends on the particular kind of credential provider.
 
 See the [Apple Documentation](https://developer.apple.com/documentation/authenticationservices/asauthorizationopenidoperation) for more details.
@@ -283,11 +283,11 @@ See the [Apple Documentation](https://developer.apple.com/documentation/authenti
 
 Defines the state that the credential is in when responding to your call to [`SignInWithApple.getCredentialStateAsync()`](#signinwithapplegetcredentialstateasync). Possible values are:
 
-* `SignInWithApple.CredentialState.Authorized`
+* `SignInWithApple.CredentialState.AUTHORIZED`
   * The user is authorized.
-* `SignInWithApple.CredentialState.Revoked`
+* `SignInWithApple.CredentialStates.REVOKED`
   * Authorization for the given user has been revoked.
-* `SignInWithApple.CredentialState.NotFound`
+* `SignInWithApple.CredentialStates.NOT_FOUND`
   * The user can’t be found.
 
 See the [Apple Documentation](https://developer.apple.com/documentation/authenticationservices/asauthorizationappleidprovidercredentialstate) for more details.
@@ -296,11 +296,11 @@ See the [Apple Documentation](https://developer.apple.com/documentation/authenti
 
 A value that indicates whether the user appears to be a real person. You get this in the `realUserStatus` property of a [`SignInWithAppleCredential`](#signinwithapplecredential) object. It can be used as one metric to help prevent fraud. Possible values are:
 
-* `SignInWithApple.UserDetectionStatus.LikelyReal`
+* `SignInWithApple.UserDetectionStatus.LIKELY_REAL`
   * The user appears to be a real person.
-* `SignInWithApple.UserDetectionStatus.Unknown`
+* `SignInWithApple.UserDetectionStatus.UNKNOWN`
   * The system hasn’t determined whether the user might be a real person.
-* `SignInWithApple.UserDetectionStatus.Unsupported`
+* `SignInWithApple.UserDetectionStatus.UNSUPPORTED`
   * The system can’t determine this user’s status as a real person.
 
 See the [Apple Documentation](https://developer.apple.com/documentation/authenticationservices/asuserdetectionstatus) for more details.
@@ -309,11 +309,11 @@ See the [Apple Documentation](https://developer.apple.com/documentation/authenti
 
 #### `SignInWithAppleOptions`
 
-The options you can supply when making a call to [`SignInWithApple.perform()`](#signinwithappleperform). It is an object with these properties:
+The options you can supply when making a call to [`SignInWithApple.requestAsync()`](#signinwithapplerequestasync). It is an object with these properties:
 
 | Property             | Type                                                     | Required?                                         | Default                              | Description                                                                                                                                                                                                                                                                                         |
 | -------------------- | -------------------------------------------------------- | ------------------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `requestedScopes`    | [`SignInWithApple.Scopes[]`](#signinwithapplescopes)     | No                                                | []                                   | The scopes that you are requesting. Supply an array. Defaults to an empty array (no scopes).                                                                                                                                                                                                        |
+| `requestedScopes`    | [`SignInWithApple.Scope[]`](#signinwithapplescope)       | No                                                | []                                   | The scopes that you are requesting. Supply an array. Defaults to an empty array (no scopes).                                                                                                                                                                                                        |
 | `requestedOperation` | [`SignInWithApple.Operation`](#signinwithappleoperation) | No                                                | `SignInWithApple.Operation.Login`    | The operation that you would like to perform.                                                                                                                                                                                                                                                       |
 | `user`               | `string`                                                 | Must be set for `Refresh` and `Logout` operations | `null`                               | Typically you leave this property set to nil the first time you authenticate a user. Otherwise, if you previously received an [`SignInWithAppleCredential`](#signinwithapplecredential) set this property to the value from the `user` property. Must be set for `Refresh` and `Logout` operations. |
 | `state`              | `string`                                                 | No                                                | `null`                               | Data that’s returned to you unmodified in the corresponding credential after a successful authentication. Used to verify that the response was from the request you made. Can be used to avoid replay attacks.                                                                                      |
@@ -330,7 +330,7 @@ The user credentials returned to a successful call to [`SignInWithApple.requestA
 | `authorizationCode` | `string`                                                                     | A short-lived token used by your app for proof of authorization when interacting with the app’s server counterpart.                                                                                                                                                                                    |
 | `user`              | `string`                                                                     | An arbitrary string that your app provided to the request that generated the credential. You can set this in [`SignInWithAppleOptions`](#signinwithappleoptions).                                                                                                                                      |
 | `state`             | `string?`                                                                    | An identifier associated with the authenticated user. You can use this to check if the user is still authenticated later. This is stable and can be shared across apps released under the same development team. The same user will have a different identifier for apps released by other developers. |
-| `authorizedScopes`  | [`SignInWithApple.Scopes[]`](#signinwithapplescopes)                         | The contact information the user authorized your app to access.                                                                                                                                                                                                                                        |
+| `authorizedScopes`  | [`SignInWithApple.Scope[]`](#signinwithapplescope)                           | The contact information the user authorized your app to access.                                                                                                                                                                                                                                        |
 | `fullName`          | `string?`                                                                    | The user’s name. Might not present if you didn't request access or if the user denied access.                                                                                                                                                                                                          |
 | `email`             | `string?`                                                                    | The user’s email address. Might not present if you didn't request access or if the user denied access.                                                                                                                                                                                                 |
 | `realUserStatus`    | [`SignInWithApple.UserDetectionStatus`](#signinwithappleuserdetectionstatus) | A value that indicates whether the user appears to be a real person.                                                                                                                                                                                                                                   |
