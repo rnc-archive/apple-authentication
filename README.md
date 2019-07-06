@@ -1,35 +1,35 @@
-# Sign In with Apple for React Native
+# Apple Authentication for React Native
 
 ---
 
 **🚧 UNDER CONSTRUCTION 🚧**
 
-*This library is not currently released. The README below shows what the library will eventually do. Take a look in the [issues](https://github.com/react-native-community/apple-sign-in/issues) page for discussions on our progress.*
+*This library is not currently released. The README below shows what the library will eventually do. Take a look in the [issues](https://github.com/react-native-community/apple-authentication/issues) page for discussions on our progress.*
 
 ---
 
 ![Supports iOS](https://img.shields.io/badge/platforms-ios-lightgrey.svg) ![MIT License](https://img.shields.io/npm/l/@react-native-community/netinfo.svg)
 
-Allows you to easily implement Sign In with Apple for your React Native app.
+Allows you to easily implement Sign In with Apple for your React Native app. In the future this will support additional Apple sign in methods from their [AuthenticationService](https://developer.apple.com/documentation/authenticationservices?language=objc) framework.
 
 ## Getting started
 
 Install the library using either Yarn:
 
 ```
-yarn add @react-native-community/apple-sign-in
+yarn add @react-native-community/apple-authentication
 ```
 
 or npm:
 
 ```
-npm install --save @react-native-community/apple-sign-in
+npm install --save @react-native-community/apple-authentication
 ```
 
 You then need to link the native parts of the library for the platforms you are using. The easiest way to link the library is using the CLI tool by running this command from the root of your project:
 
 ```
-react-native link @react-native-community/apple-sign-in
+react-native link @react-native-community/apple-authentication
 ```
 
 If you can't or don't want to use the CLI tool, you can also manually link the library using the instructions below (click on the arrow to show them):
@@ -40,7 +40,7 @@ If you can't or don't want to use the CLI tool, you can also manually link the l
 Either follow the [instructions in the React Native documentation](https://facebook.github.io/react-native/docs/linking-libraries-ios#manual-linking) to manually link the framework or link using [Cocoapods](https://cocoapods.org) by adding this to your `Podfile`:
 
 ```ruby
-pod 'react-native-apple-sign-in', :path => '../node_modules/@react-native-community/apple-sign-in'
+pod 'react-native-apple-authentication', :path => '../node_modules/@react-native-community/apple-authentication'
 ```
 </details>
 
@@ -51,7 +51,7 @@ TODO: Describe enabling the entitlement in Xcode
 Show the Sign In with Apple button:
 
 ```jsx
-import { SignInWithAppleButton } from "@react-native-community/apple-sign-in";
+import { SignInWithAppleButton } from "@react-native-community/apple-authentication";
 
 function YourComponent() {
     return (
@@ -65,7 +65,7 @@ function YourComponent() {
 Performing the sign in:
 
 ```javascript
-import { SignInWithApple } from "@react-native-community/apple-sign-in";
+import { SignInWithApple } from "@react-native-community/apple-authentication";
 
 SignInWithApple.requestAsync({
     requestedScopes: [
@@ -82,7 +82,7 @@ SignInWithApple.requestAsync({
 Checking if an existing user ID is valid:
 
 ```javascript
-import { SignInWithApple } from "@react-native-community/apple-sign-in";
+import { SignInWithApple } from "@react-native-community/apple-authentication";
 
 SignInWithApple.getCredentialStateAsync(userId).then(state => {
     switch (state) {
@@ -102,7 +102,7 @@ SignInWithApple.getCredentialStateAsync(userId).then(state => {
 Listening for credientials being revoked:
 
 ```javascript
-import { SignInWithApple } from "@react-native-community/apple-sign-in";
+import { SignInWithApple } from "@react-native-community/apple-authentication";
 
 // Subscribe
 const unsubscribe = SignInWithApple.addRevokeListener(() => {
@@ -150,7 +150,7 @@ The properties of this component extends from `View`, however, you should not at
 | `cornerRadius` | `number`                                                     | No        | ?                                    | The radius of the corners of the button.                       |
 
 ```jsx
-import { SignInWithAppleButton, SignInWithAppleScopes } from "@react-native-community/apple-sign-in";
+import { SignInWithAppleButton, SignInWithAppleScopes } from "@react-native-community/apple-authentication";
 
 function YourComponent() {
     return (
@@ -195,7 +195,7 @@ A method which returns a `Promise` which resolves to a `boolean` if you are able
 Perform a Sign In with Apple request with the given [`SignInWithAppleOptions`](#signinwithappleoptions). The method will return a `Promise` which will resolve to a [`SignInWithAppleCredential`](#signinwithapplecredential) on success. You should make sure you include error handling.
 
 ```javascript
-import { SignInWithApple } from "@react-native-community/apple-sign-in";
+import { SignInWithApple } from "@react-native-community/apple-authentication";
 
 SignInWithApple.requestAsync({
     requestedScopes: [
@@ -214,7 +214,7 @@ SignInWithApple.requestAsync({
 You can query the current state of a user ID. It will tell you if the token is still valid or if it has been revoked by the user.
 
 ```javascript
-import { SignInWithApple } from "@react-native-community/apple-sign-in";
+import { SignInWithApple } from "@react-native-community/apple-authentication";
 
 SignInWithApple.getCredentialStateAsync(userId).then(state => {
     switch (state) {
@@ -238,7 +238,7 @@ See the [Apple Documentation](https://developer.apple.com/documentation/authenti
 Adds a listener for when a token has been revoked. This means that the user has signed out and you should update your UI to reflect this.
 
 ```javascript
-import { SignInWithApple } from "@react-native-community/apple-sign-in";
+import { SignInWithApple } from "@react-native-community/apple-authentication";
 
 // Subscribe
 const unsubscribe = SignInWithApple.addRevokeListener(() => {
