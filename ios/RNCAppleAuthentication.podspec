@@ -1,18 +1,18 @@
 
 Pod::Spec.new do |s|
-  s.name         = "RNCAppleSignIn"
+  s.name         = "RNCAppleAuthentication"
   s.version      = "1.0.0"
-  s.summary      = "RNCAppleSignIn"
+  s.summary      = "RNCAppleAuthentication"
   s.description  = <<-DESC
-                  RNCAppleSignIn
+                  RNCAppleAuthentication
                    DESC
   s.homepage     = ""
   s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author             = { "author" => "author@domain.cn" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/author/RNCAppleSignIn.git", :tag => "master" }
-  s.source_files  = "RNCAppleSignIn/**/*.{h,m}"
+  s.source       = { :git => "https://github.com/author/RNCAppleAuthentication.git", :tag => "master" }
+  s.source_files  = "RNCAppleAuthentication/**/*.{h,m}"
   s.requires_arc = true
 
 
