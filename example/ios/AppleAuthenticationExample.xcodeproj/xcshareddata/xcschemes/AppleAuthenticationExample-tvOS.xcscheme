@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "AppleSignInExample-tvOS.app"
-               BlueprintName = "AppleSignInExample-tvOS"
-               ReferencedContainer = "container:AppleSignInExample.xcodeproj">
+               BuildableName = "AppleAuthenticationExample-tvOS.app"
+               BlueprintName = "AppleAuthenticationExample-tvOS"
+               ReferencedContainer = "container:AppleAuthenticationExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "AppleSignInExample-tvOSTests.xctest"
-               BlueprintName = "AppleSignInExample-tvOSTests"
-               ReferencedContainer = "container:AppleSignInExample.xcodeproj">
+               BuildableName = "AppleAuthenticationExample-tvOSTests.xctest"
+               BlueprintName = "AppleAuthenticationExample-tvOSTests"
+               ReferencedContainer = "container:AppleAuthenticationExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "AppleSignInExample-tvOSTests.xctest"
-               BlueprintName = "AppleSignInExample-tvOSTests"
-               ReferencedContainer = "container:AppleSignInExample.xcodeproj">
+               BuildableName = "AppleAuthenticationExample-tvOSTests.xctest"
+               BlueprintName = "AppleAuthenticationExample-tvOSTests"
+               ReferencedContainer = "container:AppleAuthenticationExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "AppleSignInExample-tvOS.app"
-            BlueprintName = "AppleSignInExample-tvOS"
-            ReferencedContainer = "container:AppleSignInExample.xcodeproj">
+            BuildableName = "AppleAuthenticationExample-tvOS.app"
+            BlueprintName = "AppleAuthenticationExample-tvOS"
+            ReferencedContainer = "container:AppleAuthenticationExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "AppleSignInExample-tvOS.app"
-            BlueprintName = "AppleSignInExample-tvOS"
-            ReferencedContainer = "container:AppleSignInExample.xcodeproj">
+            BuildableName = "AppleAuthenticationExample-tvOS.app"
+            BlueprintName = "AppleAuthenticationExample-tvOS"
+            ReferencedContainer = "container:AppleAuthenticationExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "AppleSignInExample-tvOS.app"
-            BlueprintName = "AppleSignInExample-tvOS"
-            ReferencedContainer = "container:AppleSignInExample.xcodeproj">
+            BuildableName = "AppleAuthenticationExample-tvOS.app"
+            BlueprintName = "AppleAuthenticationExample-tvOS"
+            ReferencedContainer = "container:AppleAuthenticationExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

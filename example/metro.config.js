@@ -4,14 +4,11 @@
  *
  * @format
  */
-
-const path = require('path');
-
 const reactNativeLib = path.resolve(__dirname, '..');
 
 module.exports = {
-  watchFolders: [path.resolve(__dirname, 'node_modules'), reactNativeLib],
   transformer: {
+  	watchFolders: [path.resolve(__dirname, 'node_modules'), reactNativeLib],
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
