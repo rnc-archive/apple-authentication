@@ -1,8 +1,6 @@
-import { NativeModules } from 'react-native';
-import { requireNativeComponent } from 'react-native';
+import { NativeModules, requireNativeComponent } from 'react-native';
 
-const { RNCAppleSignIn } = NativeModules;
+const { RNCAppleAuthentication } = NativeModules;
+export { RNCAppleAuthentication as SignInWithApple };
 
-export const AppleSignInButton = requireNativeComponent('RNCAppleSignInButton');
-
-export default RNCAppleSignIn;
+export const SignInWithAppleButton = requireNativeComponent('RNCSignInWithAppleButton');

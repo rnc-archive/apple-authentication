@@ -1,5 +1,5 @@
 {
-  "name": "react-native-apple-sign-in",
+  "name": "@react-native-community/apple-authentication",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "react-native"
   ],
   "author": "",
-  "license": "",
+  "license": "MIT",
   "peerDependencies": {
     "react-native": "^0.59.9"
   }
