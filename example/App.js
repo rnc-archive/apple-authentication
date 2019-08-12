@@ -8,7 +8,10 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import RNCAppleSignIn, { AppleSignInButton } from 'react-native-apple-sign-in';
+import {
+  SignInWithApple,
+  SignInWithAppleButton,
+} from '@react-native-community/apple-authentication';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -20,7 +23,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <AppleSignInButton style={{ height: 44, width: 200 }} onPress={this.signIn} />
+        <SignInWithAppleButton style={{ height: 44, width: 200 }} onPress={this.signIn} />
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
@@ -29,7 +32,10 @@ export default class App extends Component<Props> {
   }
   signIn = async () => {
     try {
-      const result = await RNCAppleSignIn.signIn();
+      debugger;
+      const result = await SignInWithApple.requestAsync({
+        scopes: [SignInWithApple.Scope.FULL_NAME, SignInWithApple.Scope.EMAIL],
+      });
       console.warn(result);
     } catch (err) {
       console.error(err);

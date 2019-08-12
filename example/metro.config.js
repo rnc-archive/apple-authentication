@@ -4,9 +4,7 @@
  *
  * @format
  */
-
 const path = require('path');
-
 const reactNativeLib = path.resolve(__dirname, '..');
 
 module.exports = {
