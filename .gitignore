@@ -12,6 +12,7 @@ yarn-error.log
 # build output
 
 index.js
+index.d.ts
   
 
 # Xcode

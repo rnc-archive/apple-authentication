@@ -23,7 +23,7 @@ export interface SignInWithAppleOptions {
    * Used to verify that the response was from the request you made. Can be used to avoid replay attacks.
    */
   state?: string;
-};
+}
 
 export interface SignInWithAppleCredential {
   /**
@@ -69,12 +69,12 @@ export interface SignInWithAppleCredential {
    * A value that indicates whether the user appears to be a real person.
    */
   realUserStatus: SignInWithAppleUserDetectionStatus;
-};
+}
 
 export interface SignInWithAppleScopes {
   FULL_NAME: string;
   EMAIL: string;
-};
+}
 
 export type SignInWithAppleScope = keyof SignInWithAppleScopes;
 
@@ -83,7 +83,7 @@ export interface SignInWithAppleOperations {
   LOGOUT: string;
   REFRESH: string;
   IMPLICIT: string;
-};
+}
 
 export type SignInWithAppleOperation = keyof SignInWithAppleOperations;
 
@@ -91,7 +91,7 @@ export interface SignInWithAppleUserDetectionStatuses {
   LIKELY_REAL: string;
   UNKNOWN: string;
   UNSUPPORTED: string;
-};
+}
 
 export type SignInWithAppleUserDetectionStatus = keyof SignInWithAppleUserDetectionStatuses;
 
@@ -101,7 +101,7 @@ export interface ISignInWithApple {
   Scope: SignInWithAppleScopes;
   Operation: SignInWithAppleOperations;
   UserDetectionStatus: SignInWithAppleUserDetectionStatuses;
-};
+}
 
 const { RNCAppleAuthentication } = NativeModules;
 export { RNCAppleAuthentication as SignInWithApple };
