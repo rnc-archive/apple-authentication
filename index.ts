@@ -85,6 +85,8 @@ export interface SignInWithAppleOperations {
   IMPLICIT: string;
 };
 
+export type SignInWithAppleOperation = keyof SignInWithAppleOperations;
+
 export interface SignInWithAppleUserDetectionStatuses {
   LIKELY_REAL: string;
   UNKNOWN: string;
@@ -93,7 +95,6 @@ export interface SignInWithAppleUserDetectionStatuses {
 
 export type SignInWithAppleUserDetectionStatus = keyof SignInWithAppleUserDetectionStatuses;
 
-export type SignInWithAppleOperation = keyof SignInWithAppleOperations;
 
 export interface ISignInWithApple {
   requestAsync: (signInWithAppleOptions: SignInWithAppleOptions) => Promise<SignInWithAppleCredential>;
