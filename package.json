@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "keywords": [
     "react-native"
@@ -15,6 +16,7 @@
     "react-native": "^0.59.9"
   },
   "devDependencies": {
-    "@types/react-native": "^0.60.11"
+    "@types/react-native": "^0.60.11",
+    "typescript": "^3.6.2"
   }
 }

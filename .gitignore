@@ -8,6 +8,10 @@
 node_modules/
 npm-debug.log
 yarn-error.log
+
+# build output
+
+index.js
   
 
 # Xcode
@@ -29,4 +33,3 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
-      
