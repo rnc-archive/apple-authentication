@@ -13,5 +13,8 @@
   "license": "MIT",
   "peerDependencies": {
     "react-native": "^0.59.9"
+  },
+  "devDependencies": {
+    "@types/react-native": "^0.60.11"
   }
 }
