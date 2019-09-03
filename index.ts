@@ -103,7 +103,6 @@ export interface ISignInWithApple {
   UserDetectionStatus: SignInWithAppleUserDetectionStatuses;
 }
 
-const { RNCAppleAuthentication } = NativeModules;
-export { RNCAppleAuthentication as SignInWithApple };
+export const SignInWithApple: ISignInWithApple = NativeModules.RNCAppleAuthentication;
 
 export const SignInWithAppleButton = requireNativeComponent('RNCSignInWithAppleButton');
