@@ -1,4 +1,5 @@
 import { NativeModules, requireNativeComponent } from 'react-native';
+import { ComponentType } from 'react';
 
 export interface SignInWithAppleOptions {
   /**
@@ -105,4 +106,47 @@ export interface ISignInWithApple {
 
 export const SignInWithApple: ISignInWithApple = NativeModules.RNCAppleAuthentication;
 
-export const SignInWithAppleButton = requireNativeComponent('RNCSignInWithAppleButton');
+export interface SignInWithAppleButtonProps {
+  /**
+   * The callback which is called when the user pressed the button.
+   */
+  onPress: () => void;
+
+  /**
+   * Controls the text that is shown on the button.
+   */
+  type?: SignInWithAppleButtonType;
+
+  /**
+   * Controls the style of the button.
+   */
+  style?: SignInWithAppleButtonStyle;
+
+  /**
+   * The radius of the corners of the button.
+   */
+  cornerRadius?: number;
+}
+
+export interface SignInWithAppleButtonTypes {
+  DEFAULT: string;
+  SIGN_UP: string;
+  CONTINUE: string;
+}
+
+export type SignInWithAppleButtonType = keyof SignInWithAppleButtonTypes;
+
+export interface SignInWithAppleButtonStyles {
+  BLACK: string;
+  WHITE: string;
+  WHITE_OUTLINE: string;
+}
+
+export type SignInWithAppleButtonStyle = keyof SignInWithAppleButtonStyles;
+
+export type ISignInWithAppleButton = ComponentType<SignInWithAppleButtonProps> & {
+  Type: SignInWithAppleButtonTypes;
+  Style: SignInWithAppleButtonStyles;
+}
+
+export const SignInWithAppleButton: ISignInWithAppleButton = requireNativeComponent('RNCSignInWithAppleButton');
