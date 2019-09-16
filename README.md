@@ -2,14 +2,9 @@
 
 ---
 
-**:warning: THIS REPO IS ARCHIVED :warning:**
+**:warning: THIS REPO IS ARCHIVED, IT IS NOT FUNCTIONAL OR UNDER DEVELOPMENT :warning:**
 
-Development of this package will not continue.
-
-If you're looking for apple sign in for react native, check out the Expo [implementation](https://github.com/expo/expo/blob/master/packages/expo-apple-authentication) which supports also bare react native projects.
-
-The implementation depends on [unimodules](https://blog.expo.io/you-can-now-use-expo-apis-in-any-react-native-app-7c3a93041331) which are a way to use Expo apis in any RN project.
-
+If you're looking for Apple Sign In for React Native, check out the [expo-apple-authentication](https://github.com/expo/expo/blob/master/packages/expo-apple-authentication). This works in both vanilla React Native and managed Expo projects ([as do other Expo SDK APIs](https://blog.expo.io/you-can-now-use-expo-apis-in-any-react-native-app-7c3a93041331)).
 
 ---
 
